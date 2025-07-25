@@ -521,3 +521,19 @@ h1 {
         padding: 0.7rem 1rem;
     }
 }
+@media (max-width: 400px) {
+  /* ปรับ UI ให้พอดีหน้าจอมือถือขนาดเล็ก เช่น Redmi 8A */
+  .search-box {
+    flex-direction: column;
+  }
+
+  #trackingInput,
+  #checkBtn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+}
