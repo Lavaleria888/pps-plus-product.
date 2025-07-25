@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ติดตามงาน - PPS Plus Product</title>
+    <link rel="icon" type="image/png" href="ppslogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&family=Noto+Sans+Thai:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="logo" tabindex="0" aria-label="โลโก้บริษัท PPS">
+            <img src="ppslogo.png" alt="โลโก้ PPS" class="logo-circle" aria-hidden="true" />
+            <div class="brand-name">PPS Plus Product</div>
+        </div>
+        <button class="nav-toggle" aria-label="เปิดเมนู" aria-controls="main-nav" aria-expanded="false" onclick="toggleNavMenu()">
+            <span class="hamburger"></span>
+        </button>
+        <nav id="main-nav" aria-label="เมนูหลัก">
+            <a href="#">หน้าหลัก</a>
+            <a href="#" class="active">เช็คพัสดุ</a>
+            <a href="#">เกี่ยวกับเรา</a>
+            <a href="#">ติดต่อเรา</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tracking-container">
+            <h1>ติดตามงานแบบออนไลน์</h1>
+            <p class="subtitle">ตรวจสอบสถานะงานของคุณได้ตลอด 24 ชั่วโมง</p>
+            <div class="search-box">
+                <input type="text" id="trackingInput" placeholder="กรุณากรอกเลขรหัสงานที่นี่" aria-label="กรอกเลขพัสดุ">
+                <button id="checkBtn" onclick="searchParcel()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                    <span>ค้นหา</span>
+                </button>
+            </div>
+        </div>
+        <div id="result-container" role="region" aria-live="polite">
+             </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Script เดิมสำหรับเมนู Hamburger
+        function toggleNavMenu() {
+            const nav = document.getElementById('main-nav');
+            const btn = document.querySelector('.nav-toggle');
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('open');
+            document.body.classList.toggle('menu-open', !expanded);
+        }
+    </script>
+</body>
+</html>
